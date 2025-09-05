@@ -1,0 +1,17 @@
+.footer {
+    text-align: end;
+}
+
+.footer button {
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    color: #7a7ae7;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.footer button:hover {
+    background-color: #7a7ae7;
+    color: #fff;
+}

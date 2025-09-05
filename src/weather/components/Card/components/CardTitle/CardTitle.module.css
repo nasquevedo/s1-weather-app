@@ -1,0 +1,14 @@
+.wrapper {
+    display: grid;
+    grid-template-areas: "title weather";
+    grid-template-columns: 2fr 2fr;
+}
+
+.wrapper > div.title {
+    grid-area: title;
+}
+
+.wrapper > div.weather {
+    grid-area: weather;
+    text-align: end;
+}

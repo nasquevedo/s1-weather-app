@@ -1,0 +1,16 @@
+.filter {
+    width: 100%;
+    background-color: #e3e3e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.filter select{
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px transparent;
+    border-radius: 50px;
+    width: 100%;
+}
