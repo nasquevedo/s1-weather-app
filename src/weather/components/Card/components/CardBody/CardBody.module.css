@@ -1,0 +1,52 @@
+.main {
+    display: grid;
+    grid-template-areas: "grades info";
+    grid-template-columns: 2fr 2fr;
+}
+
+.main > div.grades {
+    grid-area: grades;
+}
+
+.grades h1 {
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    font-size: 50px;
+}
+
+.main > div.info {
+    grid-area: info;
+    text-align: end;
+}
+
+.info p {
+    padding: 0;
+    margin: 0;
+}
+
+.info img {
+    width: 50px;
+}
+
+.additional {
+    display: grid;
+    grid-template-areas: "min max hum";
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.additional > div.min {
+    grid-area: min
+}
+
+.addition > div.max {
+    grid-area: max;
+}
+
+.additional > div.hum {
+    grid-area: hum;
+}
+
+.additional div {
+    text-align: center;
+}
