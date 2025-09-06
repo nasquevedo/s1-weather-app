@@ -32,6 +32,13 @@ Seguido de esto moverse a la carpeta del proyecto que se creo:
 cd s1-weather-app
 ```
 
+En el archivo .env.local incluir el API KEY enviado al correo.
+
+Crear el archivo .env con base en .env.local:
+```sh
+cp .env.local .env
+```
+
 instalar las dependencias:
 
 ```sh
