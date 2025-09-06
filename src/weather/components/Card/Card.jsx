@@ -6,6 +6,13 @@ import ErrorMessage from '../../../shared/components/ErrorMessage/ErrorMessage'
 import CardTitle from './components/CardTitle/CardTitle'
 import CardFooter from './components/CardFooter/CardFooter'
 
+/**
+ * Renderiza tarjeta con la informacion de la 
+ * ciudad, hora y clima, más un boton para refrescar
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
 const Card = ({ setWeather }) => {
     const weather = useContext(WeatherContext)
 
@@ -18,7 +25,7 @@ const Card = ({ setWeather }) => {
                     <CardFooter city={weather?.city} setWeather={setWeather}/>
                 </>
             }
-            {weather?.city === '' && <ErrorMessage message="Aún no hay datos para mostrar" />}
+            {weather?.city === '' && <ErrorMessage message="Aún no hay datos para mostrar" /> /* en caso de error o que no halla valor en el filtro*/} 
         </div>
     )
 }

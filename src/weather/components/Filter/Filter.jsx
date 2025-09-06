@@ -1,6 +1,13 @@
 import { GetWeather } from '../../../shared/services/WeatherService'
 import styles from './Filter.module.css'
 
+/**
+ * Renderiza filtro para seleccionar
+ * la ciudad a consultar
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
 const Filter = ({ setWeather }) => {
     const handleWeather = async (event) => {
         const { value } = event.target
@@ -13,7 +20,7 @@ const Filter = ({ setWeather }) => {
                 icon: '',
                 description: '',
                 time: {}
-            })
+            }) // se setea el valor inicial del estado global
             return false
         }
         const data = await GetWeather(value)
@@ -25,7 +32,7 @@ const Filter = ({ setWeather }) => {
             icon: data?.weather[0]?.icon,
             description: data?.weather[0]?.description,
             time: { timezone: data?.timezone, dT: data?.dt }
-        })
+        }) // Se setea la informacion del clima necesaria para mostrar en pantalla
     }
 
     return (

@@ -1,5 +1,11 @@
 import styles from './CardTitle.module.css'
 
+/**
+ * Renderiza el titulo de la tarjeta (Nombre de la ciudad, Pais y Clima)
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
 const CardTitle = ({ city, country}) => {
     return (
         <div className={styles.wrapper}>

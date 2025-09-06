@@ -1,5 +1,12 @@
 import styles from './CardBody.module.css'
 
+/**
+ * Renderiza en el cuerpo de la tarjeta
+ * la temperatura actual, día, hora e icono
+ *  
+ * @param {*} param0 
+ * @returns 
+ */
 const CardBody = ({ weather }) => {   
     const { REACT_APP_WEATHER_IMG_URL } = process.env 
 
