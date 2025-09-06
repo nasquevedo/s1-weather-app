@@ -1,5 +1,10 @@
 import styles from './Nav.module.css'
 
+/**
+ * Renderiza la barra de navegacion
+ * 
+ * @returns 
+ */
 const Nav = () => {
     return (
         <div className={styles.nav}>

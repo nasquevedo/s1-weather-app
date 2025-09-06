@@ -4,6 +4,11 @@ import Container from "../../shared/components/Container/Container"
 import Card from "../components/Card/Card"
 import Filter from "../components/Filter/Filter"
 
+/**
+ * Pagina para mostrar filtro y estado del clima
+ * de la ciudad seleccionada
+ * @returns 
+ */
 const WeatherPage = () => {
     const [ weather, setWeather ] = useState({
         main: {},
@@ -12,7 +17,7 @@ const WeatherPage = () => {
         icon: '',
         description: '',
         time: {}
-    })
+    }) // Estado inicial de los datos a mostrar en pantalla
 
     return (
         <WeatherContext.Provider value={weather}>
