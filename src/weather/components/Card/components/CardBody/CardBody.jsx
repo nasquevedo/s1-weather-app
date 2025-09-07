@@ -26,7 +26,7 @@ const CardBody = ({ weather }) => {
                 <div className={styles.info}>
                     <p>{newDate.toLocaleDateString('es-ES', { weekday: 'long' })}, {newDate.getHours()} : {newDate.getMinutes() < 10 ? `0${newDate.getMinutes()}`: newDate.getMinutes()}</p>
                     <p>{weather?.description}</p>
-                    <img src={`${REACT_APP_WEATHER_IMG_URL}${weather?.icon}@2x.png`}></img>
+                    <img src={`${REACT_APP_WEATHER_IMG_URL}${weather?.icon}@2x.png`} alt="Weather Icon" />
                 </div>
             </div>
             <div className={styles.additional}>
