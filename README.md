@@ -32,7 +32,9 @@ Seguido de esto moverse a la carpeta del proyecto que se creo:
 cd s1-weather-app
 ```
 
-En el archivo .env.local incluir el API KEY enviado al correo.
+En el archivo .env.local incluir el API KEY enviado al correo en la variable {REACT_APP_API_KEY}.
+
+nota: Sin el API KEY no se podra obtener la informacion del api. se puede dejar vacio para testear casos de error.
 
 Crear el archivo .env con base en .env.local:
 ```sh

@@ -15,17 +15,18 @@ import CardFooter from './components/CardFooter/CardFooter'
  */
 const Card = ({ setWeather }) => {
     const weather = useContext(WeatherContext)
-
+    
     return (
         <div className={styles.card}>
-            {weather?.city !== '' && 
+            {weather?.city === '' && <ErrorMessage message="Aún no hay datos para mostrar" /> /* en caso de error o que no halla valor en el filtro*/} 
+            {weather.error !== '' && <ErrorMessage message={weather.error} /> }
+            {weather?.city !== '' && weather?.error === '' && 
                 <>
                     <CardTitle city={weather?.city} country={weather?.country} />
                     <CardBody weather={weather} />
                     <CardFooter city={weather?.city} setWeather={setWeather}/>
                 </>
             }
-            {weather?.city === '' && <ErrorMessage message="Aún no hay datos para mostrar" /> /* en caso de error o que no halla valor en el filtro*/} 
         </div>
     )
 }
