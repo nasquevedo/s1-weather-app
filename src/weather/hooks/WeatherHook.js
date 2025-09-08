@@ -10,10 +10,32 @@ export const GeoHook = async ( city ) => {
 
     try {
         const geo = await fetch(`${REACT_APP_GEO_ENDPOINT}?q=${city}&limit=5&appid=${REACT_APP_API_KEY}`)
-        return await geo.json()
+        const data = await geo.json()
+
+        if (data.message !== undefined) {
+            console.log(data.message);
+            return {
+                success: false,
+                error: data.message,
+                message: "Ocurrio un error inesperado",
+                data: {}
+            }
+        }
+
+        return {
+            success: true,
+            data,
+            message: "Exito",
+            error: ''
+        }
     } catch(error) {
         console.log(error)
-        return false
+        return {
+            success: false,
+            error: error,
+            message: "Ocurrio un error inesperado",
+            data: {}
+        }
     }
 }
 
@@ -33,9 +55,31 @@ export const WeatherHook = async ( lat, lon ) => {
 
     try {
         const weather = await fetch(`${REACT_APP_API_ENDPOINT}?lat=${lat}&lon=${lon}&units=metric&exclude=hourly,daily&appid=${REACT_APP_API_KEY}&lang=es`)
-        return await weather.json();
+        const data = await weather.json();
+
+        if (data.message !== undefined) {
+            console.log(data.message);
+            return {
+                success: false,
+                error: data.message,
+                message: "Ocurrio un error inesperado",
+                data: {}
+            }
+        }
+
+       return {
+            success: true,
+            data,
+            mensage: "Exito",
+            error: ''
+        }
     } catch (error) {
         console.log(error)
-        return false
+        return {
+            sucess: false,
+            error: error,
+            message: "Ocurrio un error inesperado",
+            data: {}
+        }
     }
 }

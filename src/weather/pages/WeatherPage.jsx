@@ -16,7 +16,8 @@ const WeatherPage = () => {
         country: '',
         icon: '',
         description: '',
-        time: {}
+        time: {},
+        error: ''
     }) // Estado inicial de los datos a mostrar en pantalla
 
     return (

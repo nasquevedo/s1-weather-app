@@ -19,20 +19,29 @@ const Filter = ({ setWeather }) => {
                 country: '',
                 icon: '',
                 description: '',
-                time: {}
+                time: {},
+                error: ''
             }) // se setea el valor inicial del estado global
             return false
         }
-        const data = await GetWeather(value)
+        const weather = await GetWeather(value)
+        const { data } = weather
 
-        setWeather({
-            main: data?.main,
-            city: value,
-            country: data?.sys?.country,
-            icon: data?.weather[0]?.icon,
-            description: data?.weather[0]?.description,
-            time: { timezone: data?.timezone, dT: data?.dt }
-        }) // Se setea la informacion del clima necesaria para mostrar en pantalla
+        if (weather?.success) {
+            setWeather({
+                main: data?.main,
+                city: value,
+                country: data?.sys?.country,
+                icon: data?.weather[0]?.icon,
+                description: data?.weather[0]?.description,
+                time: { timezone: data?.timezone, dT: data?.dt },
+                error: ''
+            }) // Se setea la informacion del clima necesaria para mostrar en pantalla
+            return
+        }
+
+        setWeather({...setWeather, error: weather?.message});
+        return
     }
 
     return (
